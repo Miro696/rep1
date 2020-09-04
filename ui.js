@@ -31,8 +31,25 @@ constructor() {
 <div id="repos"></div>
   `;
 }
+
+// Show Alert Function
+showAlert(message, className) {
+  // Create div
+ const div = document.createElement('div');
+ // Add class
+ div.className = className;
+ div.appendChild(document.createTextNode(message));
+ // Get Parent
+ const container = document.querySelector('.searchContainer');
+ // Get search box
+ const search = document.querySelector('.search');
+
+ container.insertBefore(div, search);
+}
+
+
 // Clear Profile function
  clearProfile() {
-   this.profile.innerHtml = '';
+   this.profile.innerHTML = '';
  }
 }
