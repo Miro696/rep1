@@ -34,6 +34,8 @@ constructor() {
 
 // Show Alert Function
 showAlert(message, className) {
+  // Clear Remaining alerts
+  this.clearAlert();
   // Create div
  const div = document.createElement('div');
  // Add class
@@ -43,10 +45,23 @@ showAlert(message, className) {
  const container = document.querySelector('.searchContainer');
  // Get search box
  const search = document.querySelector('.search');
-
+// Isert alert
  container.insertBefore(div, search);
+
+ // Timeout after 2 second
+ setTimeout(() => {
+   this.clearAlert();
+ }, 2000);
 }
 
+// Clear alert
+clearAlert() {
+  const currentAlert = document.querySelector('.alert');
+
+  if(currentAlert){
+  currentAlert.remove()
+ }
+}
 
 // Clear Profile function
  clearProfile() {
